@@ -1,6 +1,7 @@
 import {useState,useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchFoodList} from "../actions/foodActions";
+import {Link} from "react-router-dom";
 // 18버전에 맞게 제작된 라이브러리 => 19버전 사용중 => 사용 불가
 //import Pagination from "react-js-pagination";
 function FoodList(){
@@ -46,12 +47,12 @@ function FoodList(){
                     food_list && food_list.map((food) =>
                         <div className="col-md-3">
                             <div className="thumbnail">
-                                <a href="#" target="_blank">
+                                <Link to={"/detail/"+food.fno}>
                                     <img src={"https://www.menupan.com"+food.poster} alt="Lights" style={{"width":"230px","height":"120px"}}/>
                                     <div className="caption">
                                         <p>{food.name}</p>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     )

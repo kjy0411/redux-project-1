@@ -71,7 +71,7 @@ import {Provider} from 'react-redux';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import store from './store/store';
 import FoodList from "./components/FoodList";
-
+import FoodDetail from "./components/FoodDetail";
 function App() {
   /*모든 컴포넌트에서 store에 있는 모든 데이터 사용이 가능*/
   return (
@@ -79,6 +79,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<FoodList/>} />
+            <Route path="/detail/:fno" element={<FoodDetail />} />
           </Routes>
         </Router>
       </Provider>
